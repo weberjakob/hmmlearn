@@ -13,8 +13,14 @@ import matplotlib
 bvb = yf.Ticker('BVB.DE')
 
 print(bvb.info)
-print(bvb.history(period="max"))
+bvb_data = bvb.history(period="max")
+print(bvb_data)
 
+bvb_df = yf.download('BVB.DE')
+print(bvb_df)
+
+plt.plot(bvb_df['Adj Close'])
+plt.show()
 
 
 
